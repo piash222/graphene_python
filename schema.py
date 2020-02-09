@@ -1,4 +1,5 @@
 import graphene
+import json
 from datetime import datetime
 
 class User(graphene.ObjectType):
@@ -28,5 +29,6 @@ result = schema.execute(
     }
     '''
 )
+dictresult =dict(result.data.items())
+print(json.dumps(dictresult, indent=2))
 
-print(result.data.items())
